@@ -280,6 +280,9 @@ public:
         EllipticCurveClass->resize(496, 484);
         EllipticCurveClass->setMinimumSize(QSize(495, 483));
         EllipticCurveClass->setMaximumSize(QSize(496, 484));
+        QIcon icon;
+        icon.addFile(QString::fromUtf8("icon.png"), QSize(), QIcon::Normal, QIcon::Off);
+        EllipticCurveClass->setWindowIcon(icon);
         EllipticCurveClass->setStyleSheet(QString::fromUtf8(""));
         centralWidget = new QWidget(EllipticCurveClass);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
@@ -335,9 +338,9 @@ public:
         parameterBButton = new QPushButton(gridLayoutWidget_2);
         parameterBButton->setObjectName(QString::fromUtf8("parameterBButton"));
         parameterBButton->setMaximumSize(QSize(30, 16777215));
-        QIcon icon;
-        icon.addFile(QString::fromUtf8("play.png"), QSize(), QIcon::Normal, QIcon::Off);
-        parameterBButton->setIcon(icon);
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8("play.png"), QSize(), QIcon::Normal, QIcon::Off);
+        parameterBButton->setIcon(icon1);
         parameterBButton->setAutoDefault(true);
 
         gridLayout_2->addWidget(parameterBButton, 2, 6, 1, 1);
@@ -369,7 +372,7 @@ public:
         parameterAButton = new QPushButton(gridLayoutWidget_2);
         parameterAButton->setObjectName(QString::fromUtf8("parameterAButton"));
         parameterAButton->setMaximumSize(QSize(30, 16777215));
-        parameterAButton->setIcon(icon);
+        parameterAButton->setIcon(icon1);
         parameterAButton->setAutoDefault(true);
 
         gridLayout_2->addWidget(parameterAButton, 2, 2, 1, 1);
@@ -449,13 +452,14 @@ public:
         primeLineEdit = new QLineEdit(gridLayoutWidget_2);
         primeLineEdit->setObjectName(QString::fromUtf8("primeLineEdit"));
         primeLineEdit->setMinimumSize(QSize(90, 0));
+        primeLineEdit->setToolTipDuration(-1);
 
         horizontalLayout_27->addWidget(primeLineEdit);
 
         randomPrimeButton = new QPushButton(gridLayoutWidget_2);
         randomPrimeButton->setObjectName(QString::fromUtf8("randomPrimeButton"));
         randomPrimeButton->setMaximumSize(QSize(30, 16777215));
-        randomPrimeButton->setIcon(icon);
+        randomPrimeButton->setIcon(icon1);
         randomPrimeButton->setAutoDefault(true);
 
         horizontalLayout_27->addWidget(randomPrimeButton);
@@ -526,7 +530,7 @@ public:
         randomPointButton_2 = new QPushButton(gridLayoutWidget_3);
         randomPointButton_2->setObjectName(QString::fromUtf8("randomPointButton_2"));
         randomPointButton_2->setMaximumSize(QSize(30, 16777215));
-        randomPointButton_2->setIcon(icon);
+        randomPointButton_2->setIcon(icon1);
 
         gridLayout_3->addWidget(randomPointButton_2, 2, 6, 1, 1);
 
@@ -583,7 +587,7 @@ public:
         randomPointButton_1 = new QPushButton(gridLayoutWidget_3);
         randomPointButton_1->setObjectName(QString::fromUtf8("randomPointButton_1"));
         randomPointButton_1->setMaximumSize(QSize(30, 16777215));
-        randomPointButton_1->setIcon(icon);
+        randomPointButton_1->setIcon(icon1);
 
         gridLayout_3->addWidget(randomPointButton_1, 1, 6, 1, 1);
 
@@ -668,7 +672,7 @@ public:
         randomValueButton_1 = new QPushButton(gridLayoutWidget_4);
         randomValueButton_1->setObjectName(QString::fromUtf8("randomValueButton_1"));
         randomValueButton_1->setMaximumSize(QSize(30, 16777215));
-        randomValueButton_1->setIcon(icon);
+        randomValueButton_1->setIcon(icon1);
 
         gridLayout_4->addWidget(randomValueButton_1, 2, 6, 1, 1);
 
@@ -693,7 +697,7 @@ public:
         randomPointButton_3 = new QPushButton(gridLayoutWidget_4);
         randomPointButton_3->setObjectName(QString::fromUtf8("randomPointButton_3"));
         randomPointButton_3->setMaximumSize(QSize(30, 16777215));
-        randomPointButton_3->setIcon(icon);
+        randomPointButton_3->setIcon(icon1);
 
         gridLayout_4->addWidget(randomPointButton_3, 1, 6, 1, 1);
 
@@ -790,7 +794,7 @@ public:
         randomPointDHButton = new QPushButton(verticalLayoutWidget_3);
         randomPointDHButton->setObjectName(QString::fromUtf8("randomPointDHButton"));
         randomPointDHButton->setMaximumSize(QSize(30, 16777215));
-        randomPointDHButton->setIcon(icon);
+        randomPointDHButton->setIcon(icon1);
 
         horizontalLayout_10->addWidget(randomPointDHButton);
 
@@ -843,7 +847,7 @@ public:
         randomValueADHButton = new QPushButton(verticalLayoutWidget_3);
         randomValueADHButton->setObjectName(QString::fromUtf8("randomValueADHButton"));
         randomValueADHButton->setMaximumSize(QSize(30, 16777215));
-        randomValueADHButton->setIcon(icon);
+        randomValueADHButton->setIcon(icon1);
 
         horizontalLayout_15->addWidget(randomValueADHButton);
 
@@ -866,7 +870,7 @@ public:
         randomValueBDHButton = new QPushButton(verticalLayoutWidget_3);
         randomValueBDHButton->setObjectName(QString::fromUtf8("randomValueBDHButton"));
         randomValueBDHButton->setMaximumSize(QSize(30, 16777215));
-        randomValueBDHButton->setIcon(icon);
+        randomValueBDHButton->setIcon(icon1);
 
         horizontalLayout_15->addWidget(randomValueBDHButton);
 
@@ -1064,7 +1068,7 @@ public:
         randomPointMOButton = new QPushButton(verticalLayoutWidget);
         randomPointMOButton->setObjectName(QString::fromUtf8("randomPointMOButton"));
         randomPointMOButton->setMaximumSize(QSize(30, 16777215));
-        randomPointMOButton->setIcon(icon);
+        randomPointMOButton->setIcon(icon1);
 
         horizontalLayout_2->addWidget(randomPointMOButton);
 
@@ -1117,7 +1121,7 @@ public:
         randomValueEMOButton_1 = new QPushButton(verticalLayoutWidget);
         randomValueEMOButton_1->setObjectName(QString::fromUtf8("randomValueEMOButton_1"));
         randomValueEMOButton_1->setMaximumSize(QSize(30, 16777215));
-        randomValueEMOButton_1->setIcon(icon);
+        randomValueEMOButton_1->setIcon(icon1);
 
         horizontalLayout_6->addWidget(randomValueEMOButton_1);
 
@@ -1140,7 +1144,7 @@ public:
         randomValueEMOButton_2 = new QPushButton(verticalLayoutWidget);
         randomValueEMOButton_2->setObjectName(QString::fromUtf8("randomValueEMOButton_2"));
         randomValueEMOButton_2->setMaximumSize(QSize(30, 16777215));
-        randomValueEMOButton_2->setIcon(icon);
+        randomValueEMOButton_2->setIcon(icon1);
 
         horizontalLayout_6->addWidget(randomValueEMOButton_2);
 
@@ -1370,7 +1374,7 @@ public:
         randomPointBEGButton = new QPushButton(verticalLayoutWidget_4);
         randomPointBEGButton->setObjectName(QString::fromUtf8("randomPointBEGButton"));
         randomPointBEGButton->setMaximumSize(QSize(30, 16777215));
-        randomPointBEGButton->setIcon(icon);
+        randomPointBEGButton->setIcon(icon1);
 
         horizontalLayout_29->addWidget(randomPointBEGButton);
 
@@ -1429,7 +1433,7 @@ public:
         randomPointPEGButton = new QPushButton(verticalLayoutWidget_4);
         randomPointPEGButton->setObjectName(QString::fromUtf8("randomPointPEGButton"));
         randomPointPEGButton->setMaximumSize(QSize(30, 16777215));
-        randomPointPEGButton->setIcon(icon);
+        randomPointPEGButton->setIcon(icon1);
 
         horizontalLayout_21->addWidget(randomPointPEGButton);
 
@@ -1482,7 +1486,7 @@ public:
         randomValueAEGButton = new QPushButton(verticalLayoutWidget_4);
         randomValueAEGButton->setObjectName(QString::fromUtf8("randomValueAEGButton"));
         randomValueAEGButton->setMaximumSize(QSize(30, 16777215));
-        randomValueAEGButton->setIcon(icon);
+        randomValueAEGButton->setIcon(icon1);
 
         horizontalLayout_23->addWidget(randomValueAEGButton);
 
@@ -1505,7 +1509,7 @@ public:
         randomValueBEGButton = new QPushButton(verticalLayoutWidget_4);
         randomValueBEGButton->setObjectName(QString::fromUtf8("randomValueBEGButton"));
         randomValueBEGButton->setMaximumSize(QSize(30, 16777215));
-        randomValueBEGButton->setIcon(icon);
+        randomValueBEGButton->setIcon(icon1);
 
         horizontalLayout_23->addWidget(randomValueBEGButton);
 
@@ -1698,18 +1702,36 @@ public:
 
     void retranslateUi(QMainWindow *EllipticCurveClass)
     {
-        EllipticCurveClass->setWindowTitle(QApplication::translate("EllipticCurveClass", "EllipticCurve", nullptr));
+        EllipticCurveClass->setWindowTitle(QApplication::translate("EllipticCurveClass", "\320\255\320\273\320\273\320\270\320\277\321\202\320\270\321\207\320\265\321\201\320\272\320\270\320\265 \320\272\321\200\320\270\320\262\321\213\320\265", nullptr));
         label_2->setText(QApplication::translate("EllipticCurveClass", "\320\242\320\276\321\207\320\272\320\270:", nullptr));
         countPointsLabel->setText(QApplication::translate("EllipticCurveClass", "\320\232\320\276\320\273-\320\262\320\276: 0", nullptr));
+#ifndef QT_NO_TOOLTIP
+        parameterBButton->setToolTip(QApplication::translate("EllipticCurveClass", "\320\223\320\265\320\275\320\265\321\200\320\260\321\206\320\270\321\217 \321\201\320\273\321\203\321\207\320\260\320\271\320\275\320\276\320\263\320\276 \321\207\320\270\321\201\320\273\320\260", nullptr));
+#endif // QT_NO_TOOLTIP
         parameterBButton->setText(QString());
         label_4->setText(QApplication::translate("EllipticCurveClass", "\320\237\320\260\321\200\320\260\320\274\320\265\321\202\321\200 a:", nullptr));
         searchPointButton->setText(QApplication::translate("EllipticCurveClass", "\320\237\320\276\320\270\321\201\320\272 \321\202\320\276\321\207\320\265\320\272", nullptr));
         label_5->setText(QApplication::translate("EllipticCurveClass", "\320\237\320\260\321\200\320\260\320\274\320\265\321\202\321\200 b:", nullptr));
+#ifndef QT_NO_TOOLTIP
+        parameterAButton->setToolTip(QApplication::translate("EllipticCurveClass", "\320\223\320\265\320\275\320\265\321\200\320\260\321\206\320\270\321\217 \321\201\320\273\321\203\321\207\320\260\320\271\320\275\320\276\320\263\320\276 \321\207\320\270\321\201\320\273\320\260", nullptr));
+#endif // QT_NO_TOOLTIP
         parameterAButton->setText(QString());
+#ifndef QT_NO_TOOLTIP
+        parameterBLineEdit->setToolTip(QApplication::translate("EllipticCurveClass", "\320\247\320\270\321\201\320\273\320\276 \320\276\321\202 -q \320\264\320\276 q", nullptr));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_TOOLTIP
+        parameterALineEdit->setToolTip(QApplication::translate("EllipticCurveClass", "\320\247\320\270\321\201\320\273\320\276 \320\276\321\202 -q \320\264\320\276 q", nullptr));
+#endif // QT_NO_TOOLTIP
         graphCheckBox->setText(QApplication::translate("EllipticCurveClass", "\320\237\320\276\321\201\321\202\321\200\320\276\320\265\320\275\320\270\320\265 \320\263\321\200\320\260\321\204\320\270\320\272\320\260 \320\255\320\232", nullptr));
         label_19->setText(QApplication::translate("EllipticCurveClass", "\320\237\320\276\320\273\320\265 q = p\342\201\277", nullptr));
         fieldLabel->setText(QString());
         label_3->setText(QApplication::translate("EllipticCurveClass", "\320\237\321\200\320\276\321\201\321\202\320\276\320\265 \320\275\320\265\321\207\321\221\321\202\320\275\320\276\320\265 p:", nullptr));
+#ifndef QT_NO_TOOLTIP
+        primeLineEdit->setToolTip(QApplication::translate("EllipticCurveClass", "\320\237\321\200\320\276\321\201\321\202\320\276\320\265 \321\207\320\270\321\201\320\273\320\276 \320\272\321\200\320\276\320\274\320\265 2 \320\270 3 \320\270 \320\274\320\265\320\275\321\214\321\210\320\265 32768", nullptr));
+#endif // QT_NO_TOOLTIP
+#ifndef QT_NO_TOOLTIP
+        randomPrimeButton->setToolTip(QApplication::translate("EllipticCurveClass", "\320\223\320\265\320\275\320\265\321\200\320\260\321\206\320\270\321\217 \321\201\320\273\321\203\321\207\320\260\320\271\320\275\320\276\320\263\320\276 \320\277\321\200\320\276\321\201\321\202\320\276\320\263\320\276 \321\207\320\270\321\201\320\273\320\260", nullptr));
+#endif // QT_NO_TOOLTIP
         randomPrimeButton->setText(QString());
         label_31->setText(QApplication::translate("EllipticCurveClass", "\320\241\321\202\320\265\320\277\320\265\320\275\321\214 n:", nullptr));
         degreeLineEdit->setText(QApplication::translate("EllipticCurveClass", "1", nullptr));
@@ -1749,8 +1771,14 @@ public:
         label_44->setText(QApplication::translate("EllipticCurveClass", "\320\220\320\273\320\270\321\201\320\260", nullptr));
         label_46->setText(QApplication::translate("EllipticCurveClass", "\320\221\320\276\320\261", nullptr));
         label_47->setText(QApplication::translate("EllipticCurveClass", "\320\247\320\270\321\201\320\273\320\276 a:", nullptr));
+#ifndef QT_NO_TOOLTIP
+        valueADHLineEdit->setToolTip(QApplication::translate("EllipticCurveClass", "\320\241\320\273\321\203\321\207\320\260\320\271\320\275\320\276\320\265 \321\207\320\270\321\201\320\273\320\276", nullptr));
+#endif // QT_NO_TOOLTIP
         randomValueADHButton->setText(QString());
         label_49->setText(QApplication::translate("EllipticCurveClass", "\320\247\320\270\321\201\320\273\320\276 b:", nullptr));
+#ifndef QT_NO_TOOLTIP
+        valueBDHLineEdit->setToolTip(QApplication::translate("EllipticCurveClass", "\320\241\320\273\321\203\321\207\320\260\320\271\320\275\320\276\320\265 \321\207\320\270\321\201\320\273\320\276", nullptr));
+#endif // QT_NO_TOOLTIP
         randomValueBDHButton->setText(QString());
         protocolDHButton->setText(QApplication::translate("EllipticCurveClass", "\320\235\320\260\321\207\320\260\321\202\321\214", nullptr));
         label_50->setText(QApplication::translate("EllipticCurveClass", "a\342\213\205B =", nullptr));
@@ -1772,8 +1800,14 @@ public:
         label_35->setText(QApplication::translate("EllipticCurveClass", "\320\220\320\273\320\270\321\201\320\260", nullptr));
         label_29->setText(QApplication::translate("EllipticCurveClass", "\320\221\320\276\320\261", nullptr));
         label_16->setText(QApplication::translate("EllipticCurveClass", "\320\247\320\270\321\201\320\273\320\276 e\342\202\201:", nullptr));
+#ifndef QT_NO_TOOLTIP
+        valueEMOLineEdit_1->setToolTip(QApplication::translate("EllipticCurveClass", "\320\222\320\267\320\260\320\270\320\274\320\276\320\277\321\200\320\276\321\201\321\202\320\276\320\265 \321\201 \320\272\320\276\320\273-\320\262\320\276\320\274 \321\202\320\276\321\207\320\265\320\272", nullptr));
+#endif // QT_NO_TOOLTIP
         randomValueEMOButton_1->setText(QString());
         label_30->setText(QApplication::translate("EllipticCurveClass", "\320\247\320\270\321\201\320\273\320\276 e\342\202\202:", nullptr));
+#ifndef QT_NO_TOOLTIP
+        valueEMOLineEdit_2->setToolTip(QApplication::translate("EllipticCurveClass", "\320\222\320\267\320\260\320\270\320\274\320\276\320\277\321\200\320\276\321\201\321\202\320\276\320\265 \321\201 \320\272\320\276\320\273-\320\262\320\276\320\274 \321\202\320\276\321\207\320\265\320\272", nullptr));
+#endif // QT_NO_TOOLTIP
         randomValueEMOButton_2->setText(QString());
         protocolMOButton->setText(QApplication::translate("EllipticCurveClass", "\320\235\320\260\321\207\320\260\321\202\321\214", nullptr));
         label_36->setText(QApplication::translate("EllipticCurveClass", "d\342\202\201 =", nullptr));
@@ -1804,8 +1838,14 @@ public:
         label_62->setText(QApplication::translate("EllipticCurveClass", "\320\220\320\273\320\270\321\201\320\260", nullptr));
         label_63->setText(QApplication::translate("EllipticCurveClass", "\320\221\320\276\320\261", nullptr));
         label_64->setText(QApplication::translate("EllipticCurveClass", "\320\247\320\270\321\201\320\273\320\276 \316\261:", nullptr));
+#ifndef QT_NO_TOOLTIP
+        valueAEGLineEdit->setToolTip(QApplication::translate("EllipticCurveClass", "\320\241\320\273\321\203\321\207\320\260\320\271\320\275\320\276\320\265 \321\207\320\270\321\201\320\273\320\276", nullptr));
+#endif // QT_NO_TOOLTIP
         randomValueAEGButton->setText(QString());
         label_65->setText(QApplication::translate("EllipticCurveClass", "\320\247\320\270\321\201\320\273\320\276 \316\262:", nullptr));
+#ifndef QT_NO_TOOLTIP
+        valueBEGLineEdit->setToolTip(QApplication::translate("EllipticCurveClass", "\320\241\320\273\321\203\321\207\320\260\320\271\320\275\320\276\320\265 \321\207\320\270\321\201\320\273\320\276", nullptr));
+#endif // QT_NO_TOOLTIP
         randomValueBEGButton->setText(QString());
         cryptosystemEGButton->setText(QApplication::translate("EllipticCurveClass", "\320\235\320\260\321\207\320\260\321\202\321\214", nullptr));
         label_66->setText(QApplication::translate("EllipticCurveClass", "\316\262\342\213\205B =", nullptr));

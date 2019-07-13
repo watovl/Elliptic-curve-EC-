@@ -1,18 +1,19 @@
 #include "EllipticCurveWindow.h"
-#include <vector>
 #include <QTextCodec>
 #include <QMessageBox>
 #include <QErrorMessage>
-#include <QThread>
 #include "testRabinMiller.h"
 #include "algebraOverField.h"
 #include "GraphEllipticCurve.h"
 
+
 EllipticCurveWindow::EllipticCurveWindow(QWidget *parent) : QMainWindow(parent) {
 	ui.setupUi(this);
+	// установка кодировки для русских символов
 	QTextCodec::setCodecForLocale(QTextCodec::codecForName("Windows - 1251"));
+	// создание метакласса для передачи через сигнал-слот
 	qRegisterMetaType<Point>("Point");
-	qRegisterMetaType<std::vector<Point>>("std::vector<Point>");
+	qRegisterMetaType<QVector<Point>>("QVector<Point>");
 	ui.primeLineEdit->setFocus();
 	settingThread();
 	settingConnectButtons();
@@ -44,7 +45,7 @@ void EllipticCurveWindow::settingThread() {
 	connect(this, SIGNAL(startCryptosystemEG(const Point &, const Point &, const long long &, const long long &, const long long &, const long long &, const long long &)),
 		qec, SLOT(cryptosystemElGamal(const Point &, const Point &, const long long &, const long long &, const long long &, const long long &, const long long &)));
 	// связи обработки результатов вычислений
-	connect(qec, SIGNAL(resultSearchPoints(const std::vector<Point> &)), this, SLOT(handleSearchPoints(const std::vector<Point> &)));
+	connect(qec, SIGNAL(resultSearchPoints(const QVector<Point> &)), this, SLOT(handleSearchPoints(const QVector<Point> &)));
 	connect(qec, SIGNAL(resultSumPoints(const Point &)), this, SLOT(handleSumPoints(const Point &)));
 	connect(qec, SIGNAL(resultMultPoint(const Point &)), this, SLOT(handleMultPoint(const Point &)));
 	connect(qec, SIGNAL(resultIntermProtocolDH(const Point &, const Point &)), this, SLOT(handleIntermProtocolDH(const Point &, const Point &)));
@@ -176,7 +177,7 @@ void EllipticCurveWindow::onSearchPointButton() {
 	// проверка чтения параметров
 	bool ok;
 	prime = ui.primeLineEdit->text().toLongLong(&ok);
-	if (!ok) {
+	if (!ok || prime == 3) {
 		(new QErrorMessage(this))->showMessage(QString::fromLocal8Bit("Error: число p введёно не корректно."));
 		return;
 	}
@@ -405,7 +406,7 @@ void EllipticCurveWindow::onCryptosystemEGButton() {
 /* -- ОБРАБОТКА РЕЗУЛЬТАТОВ ВЫЧИСЛЕНИЙ -- */
 
 // обработка резльтата поиска точек ЭК
-void EllipticCurveWindow::handleSearchPoints(const std::vector<Point> &result) {
+void EllipticCurveWindow::handleSearchPoints(const QVector<Point> &result) {
 	pointsEC = result;
 	sizePoints = pointsEC.size() + 1;
 	// включаем интерфейс работы с точками

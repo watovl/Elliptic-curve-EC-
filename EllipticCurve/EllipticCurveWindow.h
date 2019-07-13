@@ -3,6 +3,7 @@
 
 #include <QtWidgets/QMainWindow>
 #include <QThread>
+#include <QVector>
 #include "QEllipticCurve.h"
 #include "ui_EllipticCurve.h"
 
@@ -48,7 +49,7 @@ private slots:
 	void onCryptosystemEGButton();
 
 	/* -- напюанрйю пегскэрюрнб оняке гюбепьемхъ бшвхякемхи -- */
-	void handleSearchPoints(const std::vector<Point> &result);
+	void handleSearchPoints(const QVector<Point> &result);
 	void handleSumPoints(const Point &result);
 	void handleMultPoint(const Point &result);
 	void handleIntermProtocolDH(const Point &pointAlice, const Point &pointBob);
@@ -74,7 +75,7 @@ private:
 	long long field;
 	long long parameterA;
 	long long parameterB;
-	std::vector<Point> pointsEC;
+	QVector<Point> pointsEC;
 	unsigned sizePoints;
 
 	// ОНДТСМЙЖХХ

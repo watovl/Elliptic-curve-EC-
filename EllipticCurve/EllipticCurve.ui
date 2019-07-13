@@ -26,7 +26,11 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>EllipticCurve</string>
+   <string>Эллиптические кривые</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon.png</normaloff>icon.png</iconset>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -112,6 +116,9 @@
              <height>16777215</height>
             </size>
            </property>
+           <property name="toolTip">
+            <string>Генерация случайного числа</string>
+           </property>
            <property name="text">
             <string/>
            </property>
@@ -169,6 +176,9 @@
              <height>16777215</height>
             </size>
            </property>
+           <property name="toolTip">
+            <string>Генерация случайного числа</string>
+           </property>
            <property name="text">
             <string/>
            </property>
@@ -182,10 +192,18 @@
           </widget>
          </item>
          <item row="2" column="5">
-          <widget class="QLineEdit" name="parameterBLineEdit"/>
+          <widget class="QLineEdit" name="parameterBLineEdit">
+           <property name="toolTip">
+            <string>Число от -q до q</string>
+           </property>
+          </widget>
          </item>
          <item row="2" column="1">
-          <widget class="QLineEdit" name="parameterALineEdit"/>
+          <widget class="QLineEdit" name="parameterALineEdit">
+           <property name="toolTip">
+            <string>Число от -q до q</string>
+           </property>
+          </widget>
          </item>
          <item row="3" column="0" colspan="7">
           <layout class="QHBoxLayout" name="horizontalLayout_8">
@@ -315,6 +333,12 @@
                <height>0</height>
               </size>
              </property>
+             <property name="toolTip">
+              <string>Простое число кроме 2 и 3 и меньше 32768</string>
+             </property>
+             <property name="toolTipDuration">
+              <number>-1</number>
+             </property>
             </widget>
            </item>
            <item>
@@ -324,6 +348,9 @@
                <width>30</width>
                <height>16777215</height>
               </size>
+             </property>
+             <property name="toolTip">
+              <string>Генерация случайного простого числа</string>
              </property>
              <property name="text">
               <string/>
@@ -997,6 +1024,9 @@
             </item>
             <item>
              <widget class="QLineEdit" name="valueADHLineEdit">
+              <property name="toolTip">
+               <string>Случайное число</string>
+              </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
               </property>
@@ -1047,6 +1077,9 @@
             </item>
             <item>
              <widget class="QLineEdit" name="valueBDHLineEdit">
+              <property name="toolTip">
+               <string>Случайное число</string>
+              </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
               </property>
@@ -1564,6 +1597,9 @@
             </item>
             <item>
              <widget class="QLineEdit" name="valueEMOLineEdit_1">
+              <property name="toolTip">
+               <string>Взаимопростое с кол-вом точек</string>
+              </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
               </property>
@@ -1614,6 +1650,9 @@
             </item>
             <item>
              <widget class="QLineEdit" name="valueEMOLineEdit_2">
+              <property name="toolTip">
+               <string>Взаимопростое с кол-вом точек</string>
+              </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
               </property>
@@ -2292,6 +2331,9 @@
             </item>
             <item>
              <widget class="QLineEdit" name="valueAEGLineEdit">
+              <property name="toolTip">
+               <string>Случайное число</string>
+              </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
               </property>
@@ -2342,6 +2384,9 @@
             </item>
             <item>
              <widget class="QLineEdit" name="valueBEGLineEdit">
+              <property name="toolTip">
+               <string>Случайное число</string>
+              </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
               </property>

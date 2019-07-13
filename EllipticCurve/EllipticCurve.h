@@ -16,7 +16,6 @@ enum statusSymbol : short {non_residue = -1, divisor, residue};
 const Point PointAtInfinity{ -1, -1 };
 
 // поиск точек эллиптической кривой
-//std::vector<Point> searchPointsEC(const long long &a, const long long &b, const long long &field);
 std::vector<Point> searchPointsEC(const long long &a, const long long &b, const long long &p, const int &r);
 
 // сумма двух точек Ё 

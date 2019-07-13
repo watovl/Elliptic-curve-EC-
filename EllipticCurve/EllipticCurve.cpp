@@ -8,9 +8,9 @@
 // - 1 (non_residue), если не является квадратичным вычетом;
 // 1 (residue) - квадратичный вычет
 short LegendreSymbol(const long long &value, const long long &field) {
-	if (!value) return 0;
-	if (value == 1) return 1;
 	long long a = mod(value, field);
+	if (!a) return 0;
+	if (a == 1) return 1;
 	long long p = field;
 	short res = 1;
 	while (a) {

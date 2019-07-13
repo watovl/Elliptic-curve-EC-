@@ -2,6 +2,7 @@
 #define QELLIPTICCURVE_H
 
 #include <QObject>
+#include <QVector>
 #include "EllipticCurve.h"
 #include "algebraOverField.h"
 
@@ -10,18 +11,15 @@ class QEllipticCurve : public QObject {
 
 public slots:
 	void searchPoints(const long long &a, const long long &b, const long long &p, const int &r) {
-		const std::vector<Point> result = searchPointsEC(a, b, p, r);
-		emit resultSearchPoints(result);
+		emit resultSearchPoints(QVector<Point>::fromStdVector(searchPointsEC(a, b, p, r)));
 	}
 
 	void sumPoints(const Point &point1, const Point &point2, const long long &a, const long long &field) {
-		const Point resultPoint = sumPointsEC(point1, point2, a, field);
-		emit resultSumPoints(resultPoint);
+		emit resultSumPoints(sumPointsEC(point1, point2, a, field));
 	}
 
 	void multiplicityPoint(const Point &point, const long long &value, const long long &a, const long long &field, const long long countPoint = -1) {
-		const Point resultPoint = multiplicityPointEC(point, value, a, field, countPoint);
-		emit resultMultPoint(resultPoint);
+		emit resultMultPoint(multiplicityPointEC(point, value, a, field, countPoint));
 	}
 
 	void protocolDiffieHellman(const Point &point, const long long &Alice, const long long &Bob, const long long &a, const long long &field, const long long countPoint = -1) {
@@ -55,7 +53,7 @@ public slots:
 	}
 
 signals:
-	void resultSearchPoints(const std::vector<Point> &result);
+	void resultSearchPoints(const QVector<Point> &result);
 	void resultSumPoints(const Point &resultPoint);
 	void resultMultPoint(const Point &resultPoint);
 	void resultIntermProtocolDH(const Point &Alice, const Point &Bob);

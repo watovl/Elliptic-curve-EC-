@@ -1,13 +1,14 @@
 #include "EllipticCurveWindow.h"
+#include <Windows.h>
 #include <QtWidgets/QApplication>
 #include <time.h>
 
-int main(int argc, char *argv[])
-{
+
+int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpcmdline, int ncmdshow) {
 	srand((unsigned)time(NULL));
 
-	QApplication a(argc, argv);
+	QApplication app(ncmdshow, (char **)lpcmdline);
 	EllipticCurveWindow w;
 	w.show();
-	return a.exec();
+	return app.exec();
 }
